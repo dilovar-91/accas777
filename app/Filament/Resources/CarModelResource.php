@@ -47,7 +47,7 @@ class CarModelResource extends Resource
             ])
             ->schema([
                 TextInput::make('name')->label('Модель')->required(),
-                TextInput::make('slug')->required(),
+                TextInput::make('slug'),
                 Select::make('mark_id')
                     ->label('Марка')->required()
                     ->options(Brand::all()->pluck('name', 'id'))
