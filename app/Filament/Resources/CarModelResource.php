@@ -60,9 +60,10 @@ class CarModelResource extends Resource
         return $table
             ->columns([
                 TextColumn::make('id')->searchable()->sortable(),
-                TextColumn::make('name')->searchable()->sortable(),
+
                 //TextColumn::make('slug')->searchable()->sortable(),
-                TextColumn::make('brand.name')->searchable()->sortable(),
+                TextColumn::make('brand.name')->label('Марка')->searchable()->sortable(),
+                TextColumn::make('name')->label('Модель')->searchable()->sortable(),
             ])
             ->filters([
                 SelectFilter::make('mark_id')
