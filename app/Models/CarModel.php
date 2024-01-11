@@ -12,6 +12,11 @@ class CarModel extends Model
     protected $table = 'models'; // указываем имя таблицы явно
 
 
+    protected $fillable = [
+        'name', 'slug', 'brand_id'
+    ];
+
+
     public function brand()
     {
         return $this->belongsTo('App\Models\Brand');

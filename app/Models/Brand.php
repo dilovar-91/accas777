@@ -9,6 +9,10 @@ class Brand extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'name', 'slug'
+    ];
+
     public function models()
     {
         return $this->belongsTo('App\Models\CarModel', 'id','brand_id');
