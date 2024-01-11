@@ -13,7 +13,7 @@ class CarModel extends Model
 
 
     protected $fillable = [
-        'name', 'slug', 'brand_id'
+        'name', 'brand_id'
     ];
 
 
