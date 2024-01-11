@@ -47,7 +47,7 @@ class CarModelResource extends Resource
             ])
             ->schema([
                 TextInput::make('name')->label('Модель')->required(),
-                TextInput::make('slug'),
+                //TextInput::make('slug'),
                 Select::make('brand_id')
                     ->label('Марка')->required()
                     ->options(Brand::all()->pluck('name', 'id'))
@@ -61,7 +61,7 @@ class CarModelResource extends Resource
             ->columns([
                 TextColumn::make('id')->searchable()->sortable(),
                 TextColumn::make('name')->searchable()->sortable(),
-                TextColumn::make('slug')->searchable()->sortable(),
+                //TextColumn::make('slug')->searchable()->sortable(),
                 TextColumn::make('brand.name')->searchable()->sortable(),
             ])
             ->filters([
