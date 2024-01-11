@@ -41,7 +41,7 @@ class BrandResource extends Resource
             ])
             ->schema([
                 TextInput::make('name')->label('Название')->required(),
-                TextInput::make('slug')->required(),
+                TextInput::make('slug'),
             ]);
     }
 
