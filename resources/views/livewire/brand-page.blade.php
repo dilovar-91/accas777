@@ -2,9 +2,9 @@
     <div class="w-full">
         <div class="bg-white py-6 sm:py-8 lg:py-12" >
             <div class="mx-auto max-w-screen-2xl px-4 md:px-8 overflow-y-auto "  style="height: 32vh;">
-                <div class="grid grid-cols-7 gap-4 ">
+                <div class="grid grid-cols-7 gap-2 ">
                     @foreach ($brands as $mark)
-                        <div wire:key="{{ $mark->id }}" wire:click="loadData({{ $mark->id }})" class=" cursor-pointer flex h-16 items-center justify-center rounded-lg bg-gray-100 p-4 text-green-400 sm:h-32 @if($brand_id === $mark->id) bg-primary-500 @else bg-gray-100 @endif">
+                        <div wire:key="{{ $mark->id }}" wire:click="loadData({{ $mark->id }})" class=" cursor-pointer flex h-12 items-center justify-center rounded-lg bg-gray-100 p-3 text-green-400 sm:h-11 @if($brand_id === $mark->id) bg-primary-500 @else bg-gray-100 @endif">
                             {{ $mark->name }}
                         </div>
                     @endforeach
