@@ -14,12 +14,12 @@ class BrandPage extends Page
 
     public function getTitle(): string
     {
-        return "Список марок машин";
+        return "Список марок и машин";
     }
 
     public static function getNavigationLabel(): string
     {
-        return 'Список марок машин';
+        return 'Список марок и машин';
     }
 
 
