@@ -19,14 +19,14 @@ class BrandPage extends Component
 
     public function mount()
     {
-        $this->brands = Brand::get();
+        $this->brands = Brand::orderBy('name')->get();
     }
 
 
     public function loadData($brand_id)
     {
         $this->brand_id = $brand_id;
-        $this->models = CarModel::where('brand_id', $brand_id)->get();
+        $this->models = CarModel::where('brand_id', $brand_id)->orderBy('name')->get();
     }
 
 

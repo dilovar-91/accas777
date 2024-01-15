@@ -30,6 +30,14 @@ return [
 
     ],
 
+
+    'layout' => [
+        'sidebar' => [
+            'is_collapsible_on_desktop' => true,
+        ],
+        'max_content_width' => 'full',
+    ],
+
     /*
     |--------------------------------------------------------------------------
     | Default Filesystem Disk
