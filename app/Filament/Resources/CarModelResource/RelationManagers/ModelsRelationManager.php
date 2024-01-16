@@ -3,6 +3,7 @@
 namespace App\Filament\Resources\CarModelResource\RelationManagers;
 
 use Filament\Forms;
+use Filament\Forms\Components\Select;
 use Filament\Forms\Form;
 use Filament\Resources\RelationManagers\RelationManager;
 use Filament\Tables;
@@ -16,16 +17,24 @@ class ModelsRelationManager extends RelationManager
 
     public function form(Form $form): Form
     {
+        $brand_id = $this->ownerRecord->id;
         return $form
             ->schema([
                 Forms\Components\TextInput::make('name')
                     ->required()
                     ->maxLength(255),
+                Select::make('brand_id')
+                    ->relationship('brand', 'name')
+                    ->default($brand_id)
+                    ->required(),
             ]);
     }
 
     public function table(Table $table): Table
     {
+
+
+
         return $table
             ->recordTitleAttribute('name')
             ->columns([
