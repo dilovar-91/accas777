@@ -4,6 +4,7 @@ namespace App\Filament\Resources;
 
 use App\Filament\Resources\BrandResource\RelationManagers\BrandsRelationManager;
 use App\Filament\Resources\CarModelResource\Pages;
+use App\Filament\Resources\CarModelResource\RelationManagers\ModelsRelationManager;
 use App\Models\Brand;
 use App\Models\CarModel;
 use Filament\Tables\Actions\EditAction;
@@ -83,9 +84,11 @@ class CarModelResource extends Resource
     public static function getRelations(): array
     {
         return [
-            //
+
+
         ];
     }
+
 
     public static function getPages(): array
     {

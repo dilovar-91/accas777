@@ -26,7 +26,8 @@ class BrandPage extends Component
     public function loadData($brand_id)
     {
         $this->brand_id = $brand_id;
-        $this->models = CarModel::where('brand_id', $brand_id)->orderBy('name')->get();
+        $this->brands = Brand::orderBy('name')->get();
+        $this->models = CarModel::where('brand_id', $brand_id)->orderBy('name', 'asc')->get();
     }
 
 

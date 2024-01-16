@@ -3,7 +3,7 @@
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\BrandResource\Pages;
-use App\Filament\Resources\CarModelResource\RelationManagers\ModelsRelationManager;
+use App\Filament\Resources\BrandResource\RelationManagers\ModelsRelationManager;
 use App\Models\Brand;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
@@ -69,7 +69,6 @@ class BrandResource extends Resource
     public static function getRelations(): array
     {
         return [
-
             ModelsRelationManager::class,
         ];
     }

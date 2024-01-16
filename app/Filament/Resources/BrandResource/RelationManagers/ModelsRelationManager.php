@@ -1,45 +1,45 @@
 <?php
 
-namespace App\Filament\Resources\CarModelResource\RelationManagers;
+namespace App\Filament\Resources\BrandResource\RelationManagers;
 
+use App\Models\CarModel;
 use Filament\Forms;
-use Filament\Forms\Components\Select;
 use Filament\Forms\Form;
 use Filament\Resources\RelationManagers\RelationManager;
 use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 
 class ModelsRelationManager extends RelationManager
 {
     protected static string $relationship = 'models';
 
+    public static function getTitle(Model $ownerRecord, string $pageClass): string
+    {
+        return "Список моделей..";
+    }
+
     public function form(Form $form): Form
     {
-        $brand_id = $this->ownerRecord->id;
         return $form
             ->schema([
                 Forms\Components\TextInput::make('name')
                     ->required()
                     ->maxLength(255),
-                Select::make('brand_id')
-                    ->relationship('brand', 'name')
-                    ->default($brand_id)
-                    ->disabled()
-                    ->required(),
+                Forms\Components\TextInput::make('brand')
+                    ->required()
+                    ->maxLength(255),
             ]);
     }
 
     public function table(Table $table): Table
     {
-
-
-
         return $table
-            ->recordTitleAttribute('name')
+            ->recordTitle(fn (CarModel $record): string => "{$record->name} ({$record->id})")
             ->columns([
-                Tables\Columns\TextColumn::make('name')->searchable()->sortable(),
+                Tables\Columns\TextColumn::make('name'),
             ])
             ->filters([
                 //
