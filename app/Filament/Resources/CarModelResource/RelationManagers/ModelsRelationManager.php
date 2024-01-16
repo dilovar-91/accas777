@@ -26,6 +26,7 @@ class ModelsRelationManager extends RelationManager
                 Select::make('brand_id')
                     ->relationship('brand', 'name')
                     ->default($brand_id)
+                    ->disabled()
                     ->required(),
             ]);
     }
