@@ -20,9 +20,9 @@ class UserResource extends Resource
 {
     protected static ?string $model = User::class;
 
-    protected static ?string $modelLabel = 'пользоветели';
+    protected static ?string $modelLabel = 'пользователи';
 
-    protected static ?string $pluralModelLabel = 'Список пользоветелей';
+    protected static ?string $pluralModelLabel = 'Список пользователей';
 
     protected static ?string $navigationIcon = 'heroicon-o-user';
 
@@ -30,7 +30,7 @@ class UserResource extends Resource
 
     public static function getNavigationLabel(): string
     {
-        return 'Список пользоветелей';
+        return 'Список пользователей';
     }
 
     protected static ?string $recordNameAttribute = 'Название';
