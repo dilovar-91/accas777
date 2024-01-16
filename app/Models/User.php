@@ -50,9 +50,9 @@ class User extends Authenticatable implements FilamentUser, HasName
         'password' => 'hashed',
     ];
 
-    public function canAccessPanel(Panel $panel): bool
+    public function canAccessFilament(): bool
     {
-        return  true;
+        return true;
     }
 
     public function getFilamentName(): string
