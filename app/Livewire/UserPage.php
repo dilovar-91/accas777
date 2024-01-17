@@ -10,8 +10,8 @@ class UserPage extends Component
     public function render()
     {
         if (!Auth::check()) {
-            // Redirect to the login page or any other desired page
-            return redirect('/login');
+            $this->redirect('/login');
+
         }
         return view('livewire.user-page');
     }
