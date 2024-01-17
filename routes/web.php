@@ -22,4 +22,4 @@ Route::get('/', function () {
 
 Route::get('/', LoginPage::class)->name('login.page');
 Route::get('/login', LoginPage::class)->name('login.page');
-Route::get('/user', UserPage::class)->middleware('auth')->name('user.page');
+Route::get('/user', UserPage::class)->name('user.page');
